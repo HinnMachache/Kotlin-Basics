@@ -1,7 +1,6 @@
 package com.benny.tasks
 
-fun main()
-{
+fun main() {
     val child = 5
     val adult = 28
     val senior = 87
@@ -14,22 +13,10 @@ fun main()
 }
 
 fun ticketPrice(age: Int, isMonday: Boolean): Int {
-    when (age) {
-        in 0..12 -> {
-            return 15
-        }
-        in 13..60 -> {
-            return if (isMonday) {
-                25
-            } else {
-                30
-            }
-        }
-        in 61..100 -> {
-            return 20
-        }
-        else -> {
-            return -1
-        }
+    return when (age) {
+        in 0..12 -> 15
+        in 13..60 -> if (isMonday) 25 else 30
+        in 61..100 -> 20
+        else -> -1
     }
 }
